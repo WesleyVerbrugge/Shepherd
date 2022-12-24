@@ -2,43 +2,38 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Shift;
+use App\Models\Role;
+use Database\Factories\UserFactory;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    // Defines fillable properties on database entry for this model.
+    public $fillable = [
+        'username',
+        'e-mail',
+        'full-name'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // Defines factory belonging to the user model.
+    protected static function newFactory()
+    {
+        return UserFactory::new();
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    //Defines the many to many relationship between shifts and users.
+    public function shifts()
+    {
+        return $this->belongsToMany(Shift::class);
+    }
+
+    // Defines the many to many relationship between roles and users.
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }
