@@ -18,9 +18,8 @@ class ShiftFactory extends Factory
     public function definition()
     {
         $faker = Faker\Factory::create();
-        $dateTimeFormattedA = Carbon::now();
-        $dateTimeFormattedB = $dateTimeFormattedA->add(1, "hour")->format("Y.m.d H:i:s");
-        $dateTimeFormattedA = $dateTimeFormattedA->format("Y.m.d H:i:s");
+        $dateTimeFormattedA = Carbon::now()->format("Y.m.d H:i:s");
+        $dateTimeFormattedB = Carbon::now()->addHours(8)->format("Y.m.d H:i:s");
 
         return [
             'shift_start_details' => $dateTimeFormattedA,

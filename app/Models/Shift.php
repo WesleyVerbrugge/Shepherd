@@ -19,10 +19,20 @@ class Shift extends Model
 
     // Defines the translations of the status numbers saved to the database entries.
     private $shiftTypeTranslatables = [
+        1 => 'Day',
+        2 => 'Evening'
+    ];
+
+    private $inOfficeTranslatables = [
         1 => 'Unknown',
-        2 => 'Pressent in office',
+        2 => 'Pressent',
         3 => 'Out of office'
     ];
+
+    // Function to be able to get the in office translations inside of regular logic.
+    public function translateInOfficeType(Integer $in_office) {
+        return $this->inOfficeTranslatables[$user_type];
+    }
 
     // Function to be able to get the shift type translations inside of regular logic.
     public function translateShiftType(Integer $user_type) {

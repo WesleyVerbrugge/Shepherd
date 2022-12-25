@@ -14,8 +14,8 @@ class Role extends Model
 
     // Defines fillable properties on database entry for this model.
     public $fillable = [
-        'role_name',
-        'role_description',
+        'name',
+        'description',
         'clearance_level'
     ];
 

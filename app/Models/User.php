@@ -15,8 +15,8 @@ class User extends Model
     // Defines fillable properties on database entry for this model.
     public $fillable = [
         'username',
-        'e-mail',
-        'full-name'
+        'e_mail',
+        'full_name'
     ];
 
     // Defines factory belonging to the user model.
