@@ -32,6 +32,12 @@ class Role extends Model
         return RoleFactory::new();
     }
 
+    // Defines the inverse of the many to many relationship with users
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     // Function to be able to get the clearance level translations inside of regular logic.
     public function translateClearanceLevel(Integer $Level) {
         return $this->shiftTypeTrnslatables[$userLevel];

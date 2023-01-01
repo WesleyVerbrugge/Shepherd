@@ -16,7 +16,8 @@ class User extends Model
     public $fillable = [
         'username',
         'e_mail',
-        'full_name'
+        'full_name',
+        'superintendent_id'
     ];
 
     // Defines factory belonging to the user model.
@@ -35,5 +36,9 @@ class User extends Model
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function superIntendent() {
+        return $this->belongsTo(User::class , 'superintendent_id');
     }
 }

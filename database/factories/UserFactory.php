@@ -19,6 +19,7 @@ class UserFactory extends Factory
         $faker = Faker\Factory::create();
         $email = $faker->email();
         return [
+            'superintendent_id' => 1,
             'username' => $email,
             'e_mail' => $email,
             'full_name' => $faker->firstName() . $faker->lastName()

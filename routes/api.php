@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::resource('shifts', ShiftController::class);
 // /roles/{id} (PUT/PATCH) update
 // /roles/{id} (DELETE) delete
 Route::resource('roles', RoleController::class);
+
+//Adds routing for the role related functions. Includes GET and SHOW method.
+// /notifications (GET) index
+// /notifications/{id} (GET) show
+Route::resource('notifications', NotificationController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
