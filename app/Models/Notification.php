@@ -10,7 +10,8 @@ use App\Models\Shift;
 class Notification extends Model
 {
     use HasFactory;
-
+    
+    //Defines all fillable properties on a notification entry in the database.
     public $fillable = [
         'description',
         'archived',
