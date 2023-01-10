@@ -37,7 +37,8 @@ class User extends Model
     {
         return $this->belongsToMany(Role::class);
     }
-
+    
+    // defines the one to one relationship between a user and another user that should receive updates about their notifications as well. (Team Lead)
     public function superIntendent() {
         return $this->belongsTo(User::class , 'superintendent_id');
     }
