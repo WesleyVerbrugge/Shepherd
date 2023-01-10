@@ -16,8 +16,13 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        //Creates a faker instance for generating of fake database content.
         $faker = Faker\Factory::create();
+        
+        //Generated a fake e-mail for the user.
         $email = $faker->email();
+        
+        //Returns a factory instance on which multiple inserts in the database can be done by the seeder. The amount depending on the factory call.
         return [
             'superintendent_id' => 1,
             'username' => $email,
