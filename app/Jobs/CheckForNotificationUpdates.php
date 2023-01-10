@@ -12,12 +12,12 @@ use Illuminate\Queue\SerializesModels;
 class CheckForNotificationUpdates implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
+    
+    //Shift model linked to the existing notification
     public $shift;
-
+    
+    //Notification model that is being checked.
     public $notification;
-
-    public $updatedNotification;
 
     /**
      * Create a new job instance.
