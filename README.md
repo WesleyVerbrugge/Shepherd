@@ -25,3 +25,31 @@ Voor het vervolgens toevoegen van test-data gebruik je de het volgende commando
 
 Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt kunnen worden om visiuele aspecten van de UI te testen.
 
+Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"
+
+Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
+ /users (GET) index
+ /users/{id} (GET) show
+ /users (POST) create
+ /users/{id} (PUT/PATCH) update
+ /users/{id} (DELETE) delete
+
+
+Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
+ /shifts (GET) index
+ /shifts/{id} (GET) show
+ /shifts (POST) create
+ /shifts/{id} (PUT/PATCH) update
+ /shifts/{id} (DELETE) delete
+
+
+Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
+ /roles (GET) index
+ /roles/{id} (GET) show
+ /roles (POST) create
+ /roles/{id} (PUT/PATCH) update
+ /roles/{id} (DELETE) delete
+
+//Adds routing for the role related functions. Includes GET and SHOW method.
+ /notifications (GET) index
+ /notifications/{id} (GET) show
