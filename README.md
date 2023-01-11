@@ -8,9 +8,9 @@
 </p>
 
 ## Intial install en basis commando's.
-<b>Voor dit project is Composer vereist. Die kun je via: "https://getcomposer.org/" downloaden.</b>
-Hierna zul je via de command line het composer commando kunnen gebruiken bij elke directory op je device.
-Bij de eerte pull van de back-end branch moet je via command line de installatie van composer in de root directory aanzetten.
+<b>Voor dit project is Composer vereist. Die kun je via: "https://getcomposer.org/" downloaden.</b><br>
+Hierna zul je via de command line het composer commando kunnen gebruiken bij elke directory op je device.<br>
+Bij de eerte pull van de back-end branch moet je via command line de installatie van composer in de root directory uitvoeren.<br>
 Dit doe je door in de root directory "composer install" te runnen.
 
 Daarna wordt er geacht dat je via .env in de root directory de database gegevens van je desbetreffende lokale development omgeving invult. Dingen als de root inlog en database naam. De database moet je dan ook via de SQL tool die je gebruikt van te voren aanmaken.
