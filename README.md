@@ -53,7 +53,7 @@ Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATC
  <b>Beschikbare post en put parameters:</b><br>
  'shift_start_details' - Startdatum en tijdstip voor shift <br>
  'shift_end_details' - Einddatum en tijdstip voor shift <br>
- 'in_office' - Integer te vullen met 1, 2 of 3. Dit staat voor: <br>
+ 'in_office' - Integer te vullen met 1, 2 of 3 maar ook leeg te laten. Dan zal er automatisch met 1 worden gevuld. Dit staat voor: <br>
   1 = 'Unknown'. <br>
   2 = 'Pressent'. <br>
   3 = 'Out of office'. <br>
