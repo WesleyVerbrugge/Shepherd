@@ -32,13 +32,13 @@ Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH
  /users/{id} (GET) show <br>
  
  /users (POST) create <br>
+ /users/{id} (PUT/PATCH) update <br>
  
  <b>Beschikbare post en put parameters:</b><br>
   'username' - String van maximaal 20 karakters. <br>
   'e_mail' - Unieke e-mail van maximaal 20 karakters. <br>
   'full_name' => 'Unieke username van maximaal 40 karakters. <br>
  
- /users/{id} (PUT/PATCH) update <br>
  /users/{id} (DELETE) delete <br>
  
 
@@ -47,6 +47,7 @@ Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATC
  /shifts/{id} (GET) show <br>
  
  /shifts (POST) create <br>
+ /shifts/{id} (PUT/PATCH) update <br>
  
  <b>Beschikbare post en put parameters:</b><br>
  'shift_start_details' - Startdatum en tijdstip voor shift <br>
@@ -56,7 +57,6 @@ Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATC
   2 = 'Pressent'. <br>
   3 = 'Out of office'. <br>
  
- /shifts/{id} (PUT/PATCH) update <br>
  /shifts/{id} (DELETE) delete <br>
 
 
@@ -65,6 +65,7 @@ Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH
  /roles/{id} (GET) show <br>
  
  /roles (POST) create <br>
+ /roles/{id} (PUT/PATCH) update <br>
  
  <b>Beschikbare post en put parameters:</b><br>
  'name' - String en maximaal 20 karakters. <br>
@@ -73,9 +74,7 @@ Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH
   1 = 'Employee'. <br>
   2 = 'Team-lead'. <br>
   3 = 'Developer'. <br>
-            
- /roles/{id} (PUT/PATCH) update <br>
- 
+      
  /roles/{id} (DELETE) delete <br>
 
 //Adds routing for the role related functions. Includes GET and SHOW method.
