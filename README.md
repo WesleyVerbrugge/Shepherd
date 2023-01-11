@@ -25,7 +25,7 @@ Voor het vervolgens toevoegen van test-data gebruik je de het volgende commando
 
 Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt kunnen worden om visiuele aspecten van de UI te testen.
 
-Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"
+<b>Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"</b>
 
 Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
  /users (GET) index <br>
