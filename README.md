@@ -11,21 +11,20 @@
 <b>Voor dit project is Composer vereist. Die kun je via: "https://getcomposer.org/" downloaden.</b><br>
 Hierna zul je via de command line het composer commando kunnen gebruiken bij elke directory op je device.<br>
 Bij de eerte pull van de back-end branch moet je via command line de installatie van composer in de root directory uitvoeren.<br>
-Dit doe je door in de root directory "composer install" te runnen.
+Dit doe je door in de root directory "composer install" te runnen.<br>
 
-Daarna wordt er geacht dat je via .env in de root directory de database gegevens van je desbetreffende lokale development omgeving invult. Dingen als de root inlog en database naam. De database moet je dan ook via de SQL tool die je gebruikt van te voren aanmaken.
+Daarna wordt er geacht dat je via .env in de root directory de database gegevens van je desbetreffende lokale development omgeving invult. Dingen als de root inlog en database naam. De database moet je dan ook via de SQL tool die je gebruikt van te voren aanmaken.<br>
 
-Laravel maakt gebruikt van zogeheten artisan commando's voor het maken van classes en het vullen van de database met bijvoorbeeld te tabellen en de test data. Dit omdat de tabellen in de code worden gedefiniëert.
+Laravel maakt gebruikt van zogeheten artisan commando's voor het maken van classes en het vullen van de database met bijvoorbeeld te tabellen en de test data. Dit omdat de tabellen in de code worden gedefiniëert.<br>
 
-Voor het migreren van de database tabellen zodat deze zichtbaar worden
--php artisan migrate // Initieel
--php artisan migrate:refresh/reset //Wanneer aanpassingen aan de migraties zijn gemaakt naar de initiële migreer actie.
+Voor het migreren van de database tabellen zodat deze zichtbaar worden<br>
+-php artisan migrate // Initieel<br>
+-php artisan migrate:refresh/reset //Wanneer aanpassingen aan de migraties zijn gemaakt naar de initiële migreer actie.<br>
 
-Voor het vervolgens toevoegen van test-data gebruik je de het volgende commando
--php artisan db:seed
+Voor het vervolgens toevoegen van test-data gebruik je de het volgende commando<br>
+-php artisan db:seed<br>
 
-Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt kunnen worden om visiuele aspecten van de UI te testen.
-<br>
+Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt kunnen worden om visiuele aspecten van de UI te testen.<br>
 
 
 <h3>Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"</h3><br>
