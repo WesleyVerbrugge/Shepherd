@@ -28,7 +28,7 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
 
 <h3>Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"</h3><br><br>
 
-##Available routes for users Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+<br><h4>##Available routes for users Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /users (GET) index <br>
  /users/{id} (GET) show <br>
  
@@ -43,7 +43,7 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
  /users/{id} (DELETE) delete <br>
  
 
-##Available routes for shifts Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+<br><h4>##Available routes for shifts Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /shifts (GET) index <br>
  /shifts/{id} (GET) show <br>
  
@@ -61,7 +61,7 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
  /shifts/{id} (DELETE) delete <br>
 
 
-##Available routes for roles Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+<br><h4>##Available routes for roles Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /roles (GET) index <br>
  /roles/{id} (GET) show <br>
  
@@ -78,6 +78,6 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
       
  /roles/{id} (DELETE) delete <br>
 
-##Available routes for notifications Includes GET and SHOW method. <br>
+<br><h4>##Available routes for notifications Includes GET and SHOW method. </h4></b><br>
  /notifications (GET) index <br>
  /notifications/{id} (GET) show <br>
