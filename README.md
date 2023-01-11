@@ -38,7 +38,17 @@ Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH
 Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
  /shifts (GET) index <br>
  /shifts/{id} (GET) show <br>
+ 
  /shifts (POST) create <br>
+ 
+ <b>Beschikbare post en put parameters:</b><br>
+ 'shift_start_details' - Startdatum en tijdstip voor shift <br>
+ 'shift_end_details' - Einddatum en tijdstip voor shift <br>
+ 'in_office' - Integer te vullen met 1, 2 of 3. Dit staat voor: <br>
+  1 = 'Unknown'. <br>
+  2 = 'Pressent'. <br>
+  3 = 'Out of office'. <br>
+ 
  /shifts/{id} (PUT/PATCH) update <br>
  /shifts/{id} (DELETE) delete <br>
 
@@ -51,11 +61,11 @@ Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH
  
  <b>Beschikbare post en put parameters:</b><br>
  'name' - String en maximaal 20 karakters. <br>
- 'description' - String en maximaal 60 karakters,
+ 'description' - String en maximaal 60 karakters. <br>
  'clearance_level' - Integer te vullen met 1, 2 of 3. Dit staat voor: <br>
-  1 = 'Medewerker'.
-  2 = 'Team-leider'.
-  3 = 'Developer'.
+  1 = 'Employee'. <br>
+  2 = 'Team-lead'. <br>
+  3 = 'Developer'. <br>
             
  /roles/{id} (PUT/PATCH) update <br>
  
