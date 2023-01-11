@@ -21,9 +21,9 @@ class Role extends Model
 
     // Defines the translations of the clearance level numbers saved to the database entries.
     private $clearanceLevelTranslatables = [
-        1 => 'Unknown',
-        2 => 'Pressent in office',
-        3 => 'Out of office'
+        1 => 'Medewerker',
+        2 => 'Team-leider',
+        3 => 'Developer'
     ];
 
     // Defines factory belonging to the role model.
