@@ -9,6 +9,7 @@
 
 ## Intial install en basis commando's.
 <b>Voor dit project is Composer vereist. Die kun je via: "https://getcomposer.org/" downloaden.</b>
+Hierna zul je via de command line het composer commando kunnen gebruiken bij elke directory op je device.
 Bij de eerte pull van de back-end branch moet je via command line de installatie van composer in de root directory aanzetten.
 Dit doe je door in de root directory "composer install" te runnen.
 
