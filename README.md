@@ -77,6 +77,6 @@ Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH
       
  /roles/{id} (DELETE) delete <br>
 
-//Adds routing for the role related functions. Includes GET and SHOW method.
+//Adds routing for the role related functions. Includes GET and SHOW method. <br>
  /notifications (GET) index <br>
  /notifications/{id} (GET) show <br>
