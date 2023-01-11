@@ -27,29 +27,29 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
 
 Functies die via de routes beschikbaar zijn gemaakt in de back-end. Voorbeeld "localhost:8000/users (index) of localhost:8000/users/1 (show)"
 
-Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
- /users (GET) index
- /users/{id} (GET) show
- /users (POST) create
- /users/{id} (PUT/PATCH) update
- /users/{id} (DELETE) delete
+Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+ /users (GET) index <br>
+ /users/{id} (GET) show <br>
+ /users (POST) create <br>
+ /users/{id} (PUT/PATCH) update <br>
+ /users/{id} (DELETE) delete <br>
+ 
+
+Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+ /shifts (GET) index <br>
+ /shifts/{id} (GET) show <br>
+ /shifts (POST) create <br>
+ /shifts/{id} (PUT/PATCH) update <br>
+ /shifts/{id} (DELETE) delete <br>
 
 
-Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
- /shifts (GET) index
- /shifts/{id} (GET) show
- /shifts (POST) create
- /shifts/{id} (PUT/PATCH) update
- /shifts/{id} (DELETE) delete
-
-
-Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
- /roles (GET) index
- /roles/{id} (GET) show
- /roles (POST) create
- /roles/{id} (PUT/PATCH) update
- /roles/{id} (DELETE) delete
+Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
+ /roles (GET) index <br>
+ /roles/{id} (GET) show <br>
+ /roles (POST) create <br>
+ /roles/{id} (PUT/PATCH) update <br>
+ /roles/{id} (DELETE) delete <br>
 
 //Adds routing for the role related functions. Includes GET and SHOW method.
- /notifications (GET) index
- /notifications/{id} (GET) show
+ /notifications (GET) index <br>
+ /notifications/{id} (GET) show <br>
