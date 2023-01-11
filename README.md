@@ -30,7 +30,14 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
 Adds routing for the user related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
  /users (GET) index <br>
  /users/{id} (GET) show <br>
+ 
  /users (POST) create <br>
+ 
+ <b>Beschikbare post en put parameters:</b><br>
+  'username' - String van maximaal 20 karakters. <br>
+  'e_mail' - Unieke e-mail van maximaal 20 karakters. <br>
+  'full_name' => 'Unieke username van maximaal 40 karakters. <br>
+ 
  /users/{id} (PUT/PATCH) update <br>
  /users/{id} (DELETE) delete <br>
  
