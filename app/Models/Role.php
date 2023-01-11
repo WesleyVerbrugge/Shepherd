@@ -21,8 +21,8 @@ class Role extends Model
 
     // Defines the translations of the clearance level numbers saved to the database entries.
     private $clearanceLevelTranslatables = [
-        1 => 'Medewerker',
-        2 => 'Team-leider',
+        1 => 'Employee',
+        2 => 'Team-lead',
         3 => 'Developer'
     ];
 
