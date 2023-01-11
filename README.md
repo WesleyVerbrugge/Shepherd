@@ -45,9 +45,20 @@ Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATC
 
 Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method. <br>
  /roles (GET) index <br>
- /roles/{id} (GET) show <br>
- /roles (POST) create <br>
+ /roles/{id} (GET) show <br><br>
+ 
+ /roles (POST) create <br><br>
+ 
+ <b>Beschikbare post en put parameters:</b><br>
+ 'name' - String en maximaal 20 karakters. <br>
+ 'description' - String en maximaal 60 karakters,
+ 'clearance_level' - Integer te vullen met 1, 2 of 3. Dit staat voor: <br>
+  1 = 'Medewerker'.
+  2 = 'Team-leider'.
+  3 = 'Developer'.
+            
  /roles/{id} (PUT/PATCH) update <br>
+ 
  /roles/{id} (DELETE) delete <br>
 
 //Adds routing for the role related functions. Includes GET and SHOW method.
