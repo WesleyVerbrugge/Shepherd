@@ -32,6 +32,7 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
 <b><h4>##Available routes for users Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /users (GET) index <br>
  /users/{id} (GET) show <br>
+ /users/{id} (DELETE) delete <br>
  
  /users (POST) create <br>
  /users/{id} (PUT/PATCH) update <br>
@@ -41,12 +42,13 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
   'e_mail' - Unieke e-mail van maximaal 20 karakters. <br>
   'full_name' => 'Unieke username van maximaal 40 karakters. <br>
  
- /users/{id} (DELETE) delete <br>
+<br>
  
 
 <br><h4>##Available routes for shifts Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /shifts (GET) index <br>
  /shifts/{id} (GET) show <br>
+ /shifts/{id} (DELETE) delete <br>
  
  /shifts (POST) create <br>
  /shifts/{id} (PUT/PATCH) update <br>
@@ -59,12 +61,13 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
   2 = 'Pressent'. <br>
   3 = 'Out of office'. <br>
  
- /shifts/{id} (DELETE) delete <br>
+<br>
 
 
 <br><h4>##Available routes for roles Includes GET, POST, SHOW, PUT/PATCH and DELETE method. </h4></b><br>
  /roles (GET) index <br>
  /roles/{id} (GET) show <br>
+ /roles/{id} (DELETE) delete <br>
  
  /roles (POST) create <br>
  /roles/{id} (PUT/PATCH) update <br>
@@ -77,7 +80,8 @@ Hiermee worden een aantal willekeurige test-gebruikers aangemaakt die gebruikt k
   2 = 'Team-lead'. <br>
   3 = 'Developer'. <br>
       
- /roles/{id} (DELETE) delete <br>
+<br>
+
 
 <br><h4>##Available routes for notifications Includes GET and SHOW method. </h4></b><br>
  /notifications (GET) index <br>
