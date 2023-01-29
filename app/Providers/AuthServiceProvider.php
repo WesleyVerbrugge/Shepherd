@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\ConnectionInterface;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Custom authentication based on request ip adress and api token.
+        Auth::viaRequest('custom-api', function (Request $request) {
+            $ip = $request->ip();
+            $token = $request->token;
+            $match = ['token' => $token, 'ip_adress' => $request->ip()];
+            return ConnectionInterface::where($match)->first();
+        });
     }
 }

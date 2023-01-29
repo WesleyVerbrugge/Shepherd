@@ -23,7 +23,7 @@ use App\Http\Controllers\NotificationController;
 // /users (POST) create
 // /users/{id} (PUT/PATCH) update
 // /users/{id} (DELETE) delete
-Route::resource('users', UserController::class);
+Route::middleware('auth:api')->resource('users', UserController::class);
 
 //Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
 // /shifts (GET) index
@@ -31,7 +31,7 @@ Route::resource('users', UserController::class);
 // /shifts (POST) create
 // /shifts/{id} (PUT/PATCH) update
 // /shifts/{id} (DELETE) delete
-Route::resource('shifts', ShiftController::class);
+Route::middleware('auth:api')->resource('shifts', ShiftController::class);
 
 //Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
 // /roles (GET) index
@@ -39,12 +39,12 @@ Route::resource('shifts', ShiftController::class);
 // /roles (POST) create
 // /roles/{id} (PUT/PATCH) update
 // /roles/{id} (DELETE) delete
-Route::resource('roles', RoleController::class);
+Route::middleware('auth:api')->resource('roles', RoleController::class);
 
 //Adds routing for the role related functions. Includes GET and SHOW method.
 // /notifications (GET) index
 // /notifications/{id} (GET) show
-Route::resource('notifications', NotificationController::class);
+Route::middleware('auth:api')->resource('notifications', NotificationController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
