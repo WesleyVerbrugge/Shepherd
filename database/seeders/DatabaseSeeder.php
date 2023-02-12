@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Creates the first user which for testing purposes is our super intendent.
-
+        $firstShifts = \App\Models\Shift::factory()->count(2);
         $firstUser = new User;
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
         $firstUser->username = "Harry.V";
-        $firstUser->shifts()->attach(\App\Models\Shift::factory()->count(2));
+        $firstUser->shifts()->attach($firstShifts);
         $firstUser->save();
 
         // Creates first few connection interfaces for several developers and front-end that is authenticatable.
