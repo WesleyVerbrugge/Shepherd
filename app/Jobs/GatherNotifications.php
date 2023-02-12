@@ -36,12 +36,12 @@ class GatherNotifications implements ShouldQueue
         
         //Takes all shifts with unfilled occupancy's and gathers them.
         $this->shiftsWithOpenAction = Shift::whereDate('shift_start_details', '<=', $this->currentTimestamp)->where('in_office', '=', 1)->get();
-        Log::info($this->shiftsWithOpenAction);
+        
         
         //For each shift with an open occupancy a notification is generated for the designated shift.
         foreach($this->shiftsWithOpenAction as $shift) {
             $notification_description = "Voor datum: " . Carbon::parse($shift->shift_start_details)->format("d-m-Y") . " is reeds nog geen bezetting ingevuld! Je actie wordt vereist!";
-            
+            Log::info($shift->users());
             //Gets the user information that is linked to the shift with open occupancy to fill in for the notification model.
             foreach($shift->users()->get() as $user){
                 //Checks in database if for whatever reason there already exists a notification for the specific shift.
