@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // Creates the first user which for testing purposes is our super intendent.
         $firstShifts = \App\Models\Shift::factory()->count(1)->create();
-        dd($firstShifts);
         $firstUser = new User;
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
