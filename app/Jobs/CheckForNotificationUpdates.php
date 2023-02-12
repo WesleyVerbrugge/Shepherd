@@ -41,7 +41,7 @@ class CheckForNotificationUpdates implements ShouldQueue
         //Checks if office status was updated. And archives a the related notification for the user if filled in.
         if($this->shift->in_office == 1 || $this->shift->in_office == 2) {
             $this->notification->archived = 1;
-            $this->notification->description = "Voor datum: " . Carbon::parse($shift->shift_start_details)->format("d-m-Y") . " is op: " . Carbon::now()->format("d-m-Y") . " Kantoor-aanwezigheid ingevuld";
+            $this->notification->description = "Voor datum: " . Carbon::parse($this->shift->shift_start_details)->format("d-m-Y") . " is op: " . Carbon::now()->format("d-m-Y") . " Kantoor-aanwezigheid ingevuld";
             $this->notification->save();
         }
     }
