@@ -46,7 +46,7 @@ class ShiftController extends Controller
         $shift_end = Carbon::create($requestArray['shift_end_details'])->toTimeString();
         $shift_start = Carbon::create($requestArray['shift_start_details'])->toTimeString();
 
-        if(Carbon::parse($shift_end)->greaterThan("18:00:00")){
+        if(Carbon::parse($shift_end)->greaterThan("18:00:00") && Carbon::parse($shift_end)->lessThan("22:00:00")){
             $requestArray['shift_type'] = 2;
         } else if (Carbon::parse($shift_end)->greaterThan("22:00:00") || (Carbon::parse($shift_start)->greaterThan("00:00:00") && Carbon::parse($shift_start)->lessThan("08:00:00")) ) {
             $requestArray['shift_type'] = 3;
