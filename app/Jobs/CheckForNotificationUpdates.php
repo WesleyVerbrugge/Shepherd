@@ -37,6 +37,7 @@ class CheckForNotificationUpdates implements ShouldQueue
      */
     public function handle()
     {
+        dd($this->notification);
         //Checks if office status was updated. And archives a the related notification for the user if filled in.
         if($this->shift->in_office == 1 || $this->shift->in_office == 2) {
             $this->notification->archived = 1;
