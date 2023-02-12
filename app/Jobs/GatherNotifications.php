@@ -44,7 +44,7 @@ class GatherNotifications implements ShouldQueue
             $userarray = $shift->users()->toArray();
             $idarray = [];
             foreach($userarray as $user) {
-                array_push($idarray, $user->id)
+                array_push($idarray, $user->id);
             }
             dd($idarray);
             //Gets the user information that is linked to the shift with open occupancy to fill in for the notification model.
