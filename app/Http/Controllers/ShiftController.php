@@ -37,7 +37,7 @@ class ShiftController extends Controller
         return $request->validate([
             'shift_start_details' => 'required|date',
             'shift_end_details' => 'required|date',
-            'in_office' => 'integer|max:2'
+            'in_office' => 'integer|max:3'
         ]);
     }
 
