@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
         $firstUser->username = "Harry.V";
-        $firstUser->shifts()->attach($firstShifts[0]);
         $firstUser->save();
+        $firstUser->shifts()->attach($firstShifts[0]);
 
         // Creates first few connection interfaces for several developers and front-end that is authenticatable.
 
