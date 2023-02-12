@@ -34,7 +34,7 @@ class GatherNotifications implements ShouldQueue
         $this->currentTimestamp = Carbon::today()->addDays(7)->format("Y-m-d");
         
         //Takes all shifts with unfilled occupancy's and gathers them.
-        $this->shiftsWithOpenAction = Shift::whereDate('shift_start_details', '<=', $this->currentTimestamp)->where('in_office', '=', 0)->get();
+        $this->shiftsWithOpenAction = Shift::whereDate('shift_start_details', '<=', $this->currentTimestamp)->where('in_office', '=', 1)->get();
         
         //For each shift with an open occupancy a notification is generated for the designated shift.
         foreach($this->shiftsWithOpenAction as $shift) {
