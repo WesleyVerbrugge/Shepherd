@@ -27,8 +27,7 @@ class CheckForNotificationUpdates implements ShouldQueue
     public function __construct($shift)
     {
         $this->shift = $shift;
-        dd($shift->notification);
-        $this->notification = $shift->notification->first();
+        $this->notification = $shift->notification;
     }
 
     /**
