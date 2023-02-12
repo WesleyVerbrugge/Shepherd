@@ -6,6 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Jobs\GatherNotifications;
 use App\Jobs\CheckForNotificationUpdates;
+use App\Model\Shift;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,6 +19,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->job(new GatherNotifications)->everyMinute();
+        $schedule->call(function () {
+            $jobs = Shift::all()->count();
+            for($counter = 0; $counter < $jobs; $counter++){
+                dispatch(new GatherNotifications);
+            }
+        })->everyMinute();
     }
 
     /**
