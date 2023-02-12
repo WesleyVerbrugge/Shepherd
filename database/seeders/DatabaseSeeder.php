@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
         $firstUser->username = "Harry.V";
+        $firstUser->attach(\App\Models\Role::factory()->count(1))
         $firstUser->save();
 
         // Creates first few connection interfaces for several developers and front-end that is authenticatable.
