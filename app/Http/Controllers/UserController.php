@@ -45,7 +45,7 @@ class UserController extends Controller
             'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
         
-        if(empty($request->superintendent_id){
+        if(empty($request->superintendent_id)){
            $request->superintendent_id = null; 
         }
            
@@ -91,7 +91,7 @@ class UserController extends Controller
             'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
         
-        if(empty($request->superintendent_id){
+        if(empty($request->superintendent_id)){
            $request->superintendent_id = null; 
         }
            
