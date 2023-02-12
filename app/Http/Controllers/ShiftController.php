@@ -44,9 +44,12 @@ class ShiftController extends Controller
     //Checks if the shift end is later then 18:00 on a given shift day to automatically determine the shift type.
     private function checkShiftType($requestArray){
         $shift_end = Carbon::create($requestArray['shift_end_details'])->toTimeString();
+        $shift_start = Carbon::create($requestArray['shift_start_details'])->toTimeString();
 
         if(Carbon::parse($shift_end)->greaterThan("18:00:00")){
             $requestArray['shift_type'] = 2;
+        } else if (Carbon::parse($shift_end)->greaterThan("22:00:00") || (Carbon::parse($shift_start)->greaterThan("00:00:00") && Carbon::parse($shift_start)->lessThan("08:00:00")) ) {
+            $requestArray['shift_type'] = 3;
         } else {
             $requestArray['shift_type'] = 1;
         }
