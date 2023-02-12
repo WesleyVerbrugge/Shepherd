@@ -22,7 +22,8 @@ class Shift extends Model
     // Defines the translations of the status numbers saved to the database entries.
     private $shiftTypeTranslatables = [
         1 => 'Day',
-        2 => 'Evening'
+        2 => 'Evening',
+        3 => 'Night'
     ];
 
     private $inOfficeTranslatables = [
