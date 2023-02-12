@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Jobs\GatherNotifications;
 use App\Jobs\CheckForNotificationUpdates;
 use App\Models\Shift;
+use Illuminate\Support\Facades\Log;
 
 class Kernel extends ConsoleKernel
 {
@@ -21,7 +22,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         $schedule->call(function () {
             $jobs = Shift::all()->count();
-            dd($jobs);
+            Log::info($jobs);
             for($counter = 0; $counter < $jobs; $counter++){
                 dispatch(new GatherNotifications);
             }
