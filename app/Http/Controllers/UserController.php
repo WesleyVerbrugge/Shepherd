@@ -42,7 +42,7 @@ class UserController extends Controller
             'username' => 'required|string|max:20',
             'e_mail' => 'unique:users|email|max:40',
             'full_name' => 'unique:users|string|max:40',
-            'superintendent_id' => 'int|exists:users,id'
+            'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
         
         if(empty($request->superintendent_id){
@@ -88,7 +88,7 @@ class UserController extends Controller
             'username' => 'required|string|max:20',
             'e_mail' => 'email|max:40',
             'full_name' => 'string|max:40',
-            'superintendent_id' => 'int|exists:users,id'
+            'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
         
         if(empty($request->superintendent_id){
