@@ -31,7 +31,7 @@ class ShiftFactory extends Factory
             'shift_start_details' => $dateTimeFormattedA,
             'shift_end_details' => $dateTimeFormattedB,
             'shift_type' => 1,
-            'in_office' => 0
+            'in_office' => 1
         ];
     }
 }
