@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Creates the first user which for testing purposes is our super intendent.
-        $firstShifts = \App\Models\Shift::factory()->count(1);
+        $firstShifts = \App\Models\Shift::factory()->count(1)->create();
         dd($firstShifts);
         $firstUser = new User;
         $firstUser->full_name = "Harry Visser";
