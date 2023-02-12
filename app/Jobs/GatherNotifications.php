@@ -40,10 +40,9 @@ class GatherNotifications implements ShouldQueue
         
         //For each shift with an open occupancy a notification is generated for the designated shift.
         foreach($this->shiftsWithOpenAction as $shift) {
-            dd($shift->users()->get());
             $notification_description = "Voor datum: " . Carbon::parse($shift->shift_start_details)->format("d-m-Y") . " is reeds nog geen bezetting ingevuld! Je actie wordt vereist!";
             //Gets the user information that is linked to the shift with open occupancy to fill in for the notification model.
-            foreach($shift->users() as $user){
+            foreach($shift->users()->get() as $user){
                 dd($user);
                 //Checks in database if for whatever reason there already exists a notification for the specific shift.
                 $newNotification = Notification::firstOrNew(
