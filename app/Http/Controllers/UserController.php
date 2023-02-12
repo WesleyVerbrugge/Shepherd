@@ -44,7 +44,11 @@ class UserController extends Controller
             'full_name' => 'unique:users|string|max:40',
             'superintendent_id' => 'int|exists:users,id'
         ]);
-
+        
+        if(empty($request->superintendent_id){
+           $request->superintendent_id = null; 
+        }
+           
         $user = User::create($validated);
         return new UserResource($user);
     }
@@ -86,7 +90,11 @@ class UserController extends Controller
             'full_name' => 'string|max:40',
             'superintendent_id' => 'int|exists:users,id'
         ]);
-
+        
+        if(empty($request->superintendent_id){
+           $request->superintendent_id = null; 
+        }
+           
         $user->update($validated);
         return new UserResource($user);
     }
