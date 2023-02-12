@@ -19,9 +19,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->job(new GatherNotifications)->everyMinute();
         $schedule->call(function () {
             $jobs = Shift::all()->count();
+            dd($jobs);
             for($counter = 0; $counter < $jobs; $counter++){
                 dispatch(new GatherNotifications);
             }
