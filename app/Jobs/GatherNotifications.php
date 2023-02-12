@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Shift;
 use App\Models\Notification;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class GatherNotifications implements ShouldQueue
 {
