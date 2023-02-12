@@ -47,7 +47,7 @@ class GatherNotifications implements ShouldQueue
                 if(!is_null($user->superintendent_id)) {
                     $newNotification = 
                         Notification::firstOrNew(
-                            ['description' =>  $notification_description],
+                            ['user_id' =>   $user->id, 'shift_id' => $shift->id],
                             ['shift_id' => $shift->id, 'archived' => false, 'user_id' => $user->id, 'superintendent_id' => $user->superIntendent()->first()->id],
                         );
                     $newNotification->save();
