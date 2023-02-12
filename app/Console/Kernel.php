@@ -6,7 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Jobs\GatherNotifications;
 use App\Jobs\CheckForNotificationUpdates;
-use App\Model\Shift;
+use App\Models\Shift;
 
 class Kernel extends ConsoleKernel
 {
