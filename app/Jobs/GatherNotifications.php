@@ -45,7 +45,7 @@ class GatherNotifications implements ShouldQueue
             foreach($shift->users()->get() as $user){
                 //Checks in database if for whatever reason there already exists a notification for the specific shift.
                 if(is_null($user->superintendent_id) {
-                    continue; 
+                    continue 2; 
                 }
                 $newNotification = Notification::firstOrNew(
                     ['description' =>  $notification_description],
