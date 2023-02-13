@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         
         // Creates 3 shifts for the second test user.
         
-        $secondUserShifts = \App\Models\Shift::factory()->count(3);
+        $secondUserShifts = \App\Models\Shift::factory()->count(3)->create();
         
         // Creates the second test user with developer and employee role.  
             
