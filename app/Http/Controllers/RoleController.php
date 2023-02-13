@@ -97,6 +97,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
