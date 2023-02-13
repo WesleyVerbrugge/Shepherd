@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         
         $defaultRole3 = new Role;
         $defaultRole3->name = "Developer";
-        $defaultRole3->description = "Someone working on improving the CBuddy system'";
+        $defaultRole3->description = "Somebody working on improving the CBuddy system'";
         $defaultRole3->clearance_level = 3;
         $defaultRole3->save();
         
