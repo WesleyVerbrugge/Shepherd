@@ -58,7 +58,8 @@ class DatabaseSeeder extends Seeder
         foreach($secondUserShifts as $shift) {
         $secondUser->shifts()->attach($shift->id);
         }
-        $secondUser->roles()->attach($defaultRole3->id, $defaultRole1->id);
+        $secondUser->roles()->attach($defaultRole3->id);
+        $secondUser->roles()->attach($defaultRole1->id);
         
         // Creates first few connection interfaces for several developers and front-end that is authenticatable.
 
@@ -81,19 +82,19 @@ class DatabaseSeeder extends Seeder
         
         \App\Models\User::factory()
         ->count(1)
-        ->hasAttached(\App\Models\Role::factory()->count(1))
+        ->hasAttached($defaultRole1)
         ->hasAttached(\App\Models\Shift::factory()->count(3))
         ->create();
         
         \App\Models\User::factory()
         ->count(1)
-        ->hasAttached(\App\Models\Role::factory()->count(1))
+        ->hasAttached($defaultRole1)
         ->hasAttached(\App\Models\Shift::factory()->count(3))
         ->create();
         
         \App\Models\User::factory()
         ->count(1)
-        ->hasAttached(\App\Models\Role::factory()->count(1))
+        ->hasAttached($defaultRole1)
         ->hasAttached(\App\Models\Shift::factory()->count(3))
         ->create();
         
