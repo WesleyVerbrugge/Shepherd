@@ -44,11 +44,11 @@ class UserController extends Controller
             'full_name' => 'unique:users|string|max:40',
             'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
-        
+
         if(empty($request->superintendent_id)){
-           $request->superintendent_id = null; 
+           $request->superintendent_id = null;
         }
-           
+
         $user = User::create($validated);
         return new UserResource($user);
     }
@@ -90,11 +90,11 @@ class UserController extends Controller
             'full_name' => 'string|max:40',
             'superintendent_id' => 'nullable|int|exists:users,id'
         ]);
-        
+
         if(empty($request->superintendent_id)){
-           $request->superintendent_id = null; 
+           $request->superintendent_id = null;
         }
-           
+
         $user->update($validated);
         return new UserResource($user);
     }
@@ -109,5 +109,26 @@ class UserController extends Controller
     {
         $user->delete();
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function notificationIndex(Request $request, int $userID){
+        $notifications = \App\Models\Notification::where('user_id', $userID)->get();
+        return $this->returnJsonResponse($notifications);
+    }
+
+    public function shiftIndex(Request $request, int $userID){
+        $shifts = User::find($userID)->shifts()->get();
+        return $this->returnJsonResponse($shifts);
+    }
+
+    public function roleIndex(Request $request, int $userID){
+        $roles = User::find($userID)->roles()->get();
+        return $this->returnJsonResponse($roles);
+    }
+
+    public function returnJsonResponse($data) {
+        $data = ['data' => $data];
+
+        return response()->json($data, 200)->header('Content-Type', 'application/json');
     }
 }

@@ -25,6 +25,17 @@ use App\Http\Controllers\NotificationController;
 // /users/{id} (DELETE) delete
 Route::middleware('auth:api')->resource('users', UserController::class);
 
+// /users/[id]/notifications (GET) all notifications of one user
+Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/notifications', 'App\Http\Controllers\UserController@notificationIndex');
+
+// /users/[id]/shifts (GET) all shifts of one user
+Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/notifications', 'App\Http\Controllers\UserController@shiftIndex');
+
+// /users/[id]/shifts (GET) all shifts of one user
+Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/roles', 'App\Http\Controllers\UserController@roleIndex');
+
+
+
 //Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
 // /shifts (GET) index
 // /shifts/{id} (GET) show
@@ -33,6 +44,8 @@ Route::middleware('auth:api')->resource('users', UserController::class);
 // /shifts/{id} (DELETE) delete
 Route::middleware('auth:api')->resource('shifts', ShiftController::class);
 
+
+
 //Adds routing for the role related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.
 // /roles (GET) index
 // /roles/{id} (GET) show
@@ -40,6 +53,8 @@ Route::middleware('auth:api')->resource('shifts', ShiftController::class);
 // /roles/{id} (PUT/PATCH) update
 // /roles/{id} (DELETE) delete
 Route::middleware('auth:api')->resource('roles', RoleController::class);
+
+
 
 //Adds routing for the role related functions. Includes GET and SHOW method.
 // /notifications (GET) index
