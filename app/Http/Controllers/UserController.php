@@ -111,6 +111,11 @@ class UserController extends Controller
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
+    /**
+     * Display a listing of a singular resource along with its related notifications.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function notificationIndex(Request $request, int $userID){
         $user = User::find($userID);
         if(!is_null($user->superintendent_id)){
@@ -122,16 +127,43 @@ class UserController extends Controller
         return $this->returnJsonResponse($notifications);
     }
 
+    /**
+     * Display a listing of a singular resource along with its related Shifts
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function shiftIndex(Request $request, int $userID){
         $shifts = User::find($userID)->shifts()->get();
         return $this->returnJsonResponse($shifts);
     }
 
+    /**
+     * Display a listing of a singular resource along with its related Roles.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function roleIndex(Request $request, int $userID){
         $roles = User::find($userID)->roles()->get();
         return $this->returnJsonResponse($roles);
     }
 
+    /**
+     * Display a listing of a singular resource along with its related Super intendent Users
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function superintendentIndex(Request $request, int $userID){
+        $user = User::find($userID);
+        $superIntendents = User::where('superintendent_id', $user->superintendent_id)->get();
+
+        return $this->returnJsonResponse($superIntendents);
+    }
+
+    /**
+     * Stuctures the response for non-resourced calls.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function returnJsonResponse($data) {
         $data = ['data' => $data];
 
