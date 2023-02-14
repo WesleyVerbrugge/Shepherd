@@ -29,7 +29,7 @@ Route::middleware('auth:api')->resource('users', UserController::class);
 Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/notifications', 'App\Http\Controllers\UserController@notificationIndex');
 
 // /users/[id]/shifts (GET) all shifts of one user
-Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/notifications', 'App\Http\Controllers\UserController@shiftIndex');
+Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/shifts', 'App\Http\Controllers\UserController@shiftIndex');
 
 // /users/[id]/shifts (GET) all shifts of one user
 Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/roles', 'App\Http\Controllers\UserController@roleIndex');
