@@ -112,7 +112,13 @@ class UserController extends Controller
     }
 
     public function notificationIndex(Request $request, int $userID){
-        $notifications = \App\Models\Notification::where('user_id', $userID)->get();
+        $user = User::find($userID);
+        if(!is_null($user->superintendent_id)){
+            $notifications = \App\Models\Notification::where('user_id', $userID)->get();
+        } else {
+            $notifications = \App\Models\Notification::where('superintendent_id', $userID)->get();
+        }
+
         return $this->returnJsonResponse($notifications);
     }
 
