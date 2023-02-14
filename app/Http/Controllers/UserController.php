@@ -154,7 +154,7 @@ class UserController extends Controller
      */
     public function superintendentIndex(Request $request, int $userID){
         $user = User::find($userID);
-        $superIntendents = User::where('superintendent_id', $user->superintendent_id)->get();
+        $superIntendents = User::where('id', $user->superintendent_id)->get();
 
         return $this->returnJsonResponse($superIntendents);
     }
