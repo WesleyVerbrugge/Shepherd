@@ -4,10 +4,6 @@
 
 }
 
-.react-calendar__month-view__weekdays {
-    text-align: center;
-  }
-
 .react-calendar__navigation {
     display: flex;
 }
@@ -27,3 +23,75 @@
 .react-calendar__month-view__days__day--weekend {
     color: #000000;
 }
+
+.react-calendar {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .react-calendar__month-view__weekdays {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .react-calendar__month-view__weekdays__weekday {
+    width: 14%;
+  }
+  
+  .react-calendar__tile {
+    background-color: lightgray;
+    border: 1px solid black;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    outline: none;
+    padding-bottom: 50px;
+    user-select: none;
+    width: 15%;
+  }
+
+  .day-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+#deleteButtonContainer {
+padding-left: 40px;
+width: 20px;
+}  
+  
+  .react-calendar__tile:hover {
+    background-color: gray;
+  }
+  
+  .react-calendar__tile--active {
+    background-color: darkgray;
+  }
+  
+  .react-calendar__tile--now {
+    background-color: black;
+    color: white;
+  }
+  
+  .selected-options-list {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .selected-options-list h3 {
+    margin-bottom: 10px;
+  }
+  
+  .selected-options-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .selected-options-list li {
+    margin-bottom: 10px;
+  }

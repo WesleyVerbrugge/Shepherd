@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import "./loginstyle.css";
+import axios from "axios";
 
-// under construction
-// backend Token check ( user ) needs to be done in handlesubmit.
-//
-
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+
+    try {
+      const response = await axios.post("/api/login", { username, password });
+      setIsAuthenticated(true);
+    } catch (error) {
+      console.error(error);
+      setError("An error occurred during login");
+    }
   }
 
   return (
@@ -34,6 +40,7 @@ function Login() {
       </label>
       <br />
       <button type="submit">Log in</button>
+      {error && <div className="error-message">{error}</div>}
     </form>
   );
 }

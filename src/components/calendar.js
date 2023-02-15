@@ -21,28 +21,59 @@ function MyCalendar() {
     sendDataToPHP({ userId, day: clickedDay, option });
   };
 
-  //   // check if user is logged in, Samen met wesley koppelen aan PHP.
-  //   useEffect(() => {
-  //     axios.get("/api/user/get-user-data").then((res) => {
-  //       if (res.data.loggedIn) {
-  //         setUserId(res.data.userId);
-  //       } else {
-  //         console.log("user not logged in");
-  //       }
-  //     });
-  //   }, []);
+  function handleOptionDelete(day, option) {
+    setSelectedOptions(
+      selectedOptions.filter((item) => {
+        return item.day.getTime() !== day.getTime() || item.option !== option;
+      })
+    );
+    setDropdownVisible(false);
+    deleteDataFromPHP({ userId, day, option });
+  }
+
+  function deleteDataFromPHP(data) {
+    axios
+      .post("/api/user/delete-selected-option", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div>
-      <Calendar onClickDay={handleDayClick} />
+      <Calendar
+        onClickDay={handleDayClick}
+        tileContent={({ date, view }) => {
+          if (view === "month") {
+            const selectedOption = selectedOptions.find(
+              (item) => item.day.getTime() === date.getTime()
+            );
+            if (clickedDay && clickedDay.getTime() === date.getTime()) {
+              return (
+                <button
+                  id="deleteDay"
+                  onClick={() =>
+                    handleOptionDelete(clickedDay, selectedOption.option)
+                  }
+                >
+                  X
+                </button>
+              );
+            } else {
+              return selectedOption ? selectedOption.option : null;
+            }
+          }
+        }}
+      />
       <div>
         {dropdownVisible && (
           <div>
-            <button onClick={() => handleOptionSelect("Avond")}>
-              Avonddienst
-            </button>
-            <button onClick={() => handleOptionSelect("Dag")}>Dagdienst</button>
-            <button onClick={() => handleOptionSelect("Verlof")}>Verlof</button>
+            <button onClick={() => handleOptionSelect("A")}>Avonddienst</button>
+            <button onClick={() => handleOptionSelect("D")}>Dagdienst</button>
+            <button onClick={() => handleOptionSelect("V")}>Verlof</button>
           </div>
         )}
       </div>
@@ -59,7 +90,7 @@ function SelectedOptionsList({ selectedOptions }) {
       <h3>Selected Options:</h3>
       <ul>
         {selectedOptions.map((item, index) => (
-          <li key={index}>
+          <li className="TextSet" key={index}>
             {item.option} on {item.day.toString()}
           </li>
         ))}
@@ -70,15 +101,15 @@ function SelectedOptionsList({ selectedOptions }) {
 
 // Data send to php backend... MySql...
 
-// function sendDataToPHP(data) {
-//   axios
-//     .post("/api/user/save-selected-options", data)
-//     .then((res) => {
-//       console.log(res);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
+function sendDataToPHP(data) {
+  axios
+    .post("/api/user/save-selected-options", data)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
 export default MyCalendar;
