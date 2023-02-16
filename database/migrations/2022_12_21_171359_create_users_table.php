@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
             $table->string("e_mail")->unique(); // User e-mail
             $table->string("full_name")->unique(); // User full name
             $table->unsignedBigInteger('superintendent_id')->nullable(); // User id of the super intendent user.
+
+            $table->string('password', 60)->nullable()->default(null);
+            $table->rememberToken();
+
             $table->timestamps();
         });
     }

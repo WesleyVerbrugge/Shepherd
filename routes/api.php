@@ -37,6 +37,8 @@ Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/roles', 
 // /users/[id]/shifts (GET) all superintendent users of one user
 Route::middleware('auth:api')->middleware('json')->get('/users/{userID}/superintendents', 'App\Http\Controllers\UserController@superintendentIndex');
 
+Route::middleware('auth:api')->middleware('json')->post('/login', 'App\Http\Controllers\UserController@login');
+
 
 
 //Adds routing for the shift related functions. Includes GET, POST, SHOW, PUT/PATCH and DELETE method.

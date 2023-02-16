@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Shift;
 use App\Models\Role;
 use Database\Factories\UserFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+class User extends Authenticatable
 {
     use HasFactory;
 
@@ -18,6 +19,11 @@ class User extends Model
         'e_mail',
         'full_name',
         'superintendent_id'
+    ];
+
+    public $hidden = [
+        'password',
+        'remember_token'
     ];
 
     // Defines factory belonging to the user model.
@@ -37,7 +43,7 @@ class User extends Model
     {
         return $this->belongsToMany(Role::class);
     }
-    
+
     // defines the one to one relationship between a user and another user that should receive updates about their notifications as well. (Team Lead)
     public function superIntendent() {
         return $this->belongsTo(User::class , 'superintendent_id');

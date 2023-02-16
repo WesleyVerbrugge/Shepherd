@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -168,5 +169,22 @@ class UserController extends Controller
         $data = ['data' => $data];
 
         return response()->json($data, 200)->header('Content-Type', 'application/json');
+    }
+
+    public function login(Request $request) {
+        $credentials = $request->validate([
+            'e_mail' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+
+
+        if (Auth::attempt($credentials)) {
+            $authenticatedUser = User::where('e_mail', $request->get('e_mail'))->first();
+
+            return $this->returnJsonResponse(['is_authenticated' => true, 'user_id' => $authenticatedUser->id]);
+        } else {
+            return response()->json(['data' => ['is_authenticated' => false]], 401)->header('Content-Type', 'application/json');
+        }
     }
 }

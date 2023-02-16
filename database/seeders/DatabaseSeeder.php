@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\ConnectionInterface;
 use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
         $firstUser->username = "Harry.V";
+        $secondUser->password = Hash::make("test");
         $firstUser->save();
         $firstUser->roles()->attach($defaultRole2->id);
 
@@ -54,6 +56,7 @@ class DatabaseSeeder extends Seeder
         $secondUser->full_name = "Wesley Verbrugge";
         $secondUser->e_mail = "wesley.verbrugge@vodafoneziggo.com";
         $secondUser->username = "R3solution";
+        $secondUser->password = Hash::make("test");
         $secondUser->superintendent_id = $firstUser->id;
         $secondUser->save();
         foreach($secondUserShifts as $shift) {
