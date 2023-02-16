@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         $firstUser->full_name = "Harry Visser";
         $firstUser->e_mail = "harry.visser@vodafoneziggo.com";
         $firstUser->username = "Harry.V";
-        $secondUser->password = Hash::make("test");
+        $firstUser->password = Hash::make("test");
         $firstUser->save();
         $firstUser->roles()->attach($defaultRole2->id);
 
