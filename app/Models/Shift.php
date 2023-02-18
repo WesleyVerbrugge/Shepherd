@@ -20,21 +20,21 @@ class Shift extends Model
     ];
 
     // Defines the translations of the status numbers saved to the database entries.
-    private $shiftTypeTranslatables = [
-        1 => 'Day',
-        2 => 'Evening',
-        3 => 'Night'
+    public $shiftTypeTranslatables = [
+        0 => 'Day',
+        1 => 'Evening',
+        2 => 'Night'
     ];
 
-    private $inOfficeTranslatables = [
-        1 => 'Unknown',
-        2 => 'Pressent',
-        3 => 'Out of office'
+    public $inOfficeTranslatables = [
+        0 => 'Unknown',
+        1 => 'Pressent',
+        2 => 'Out of office'
     ];
 
     // Function to be able to get the in office translations inside of regular logic.
-    public function translateInOfficeType(Integer $in_office) {
-        return $this->inOfficeTranslatables[$user_type];
+    public function translateInOfficeType(Int $in_office) {
+        return $this->inOfficeTranslatables[$in_office];
     }
 
     // Defines the inverse of the many to many relationship with users
@@ -49,7 +49,7 @@ class Shift extends Model
     }
 
     // Function to be able to get the shift type translations inside of regular logic.
-    public function translateShiftType(Integer $user_type) {
-        return $this->shiftTypeTrnslatables[$user_type];
+    public function translateShiftType(Int $shift_type) {
+        return $this->shiftTypeTranslatables[$shift_type];
     }
 }

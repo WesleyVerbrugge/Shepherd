@@ -14,6 +14,16 @@ class ShiftResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'shift_start_details' => $this->shift_start_details,
+            'shift_end_details' => $this->shift_end_details,
+            'shift_type' => [$this->shift_type => $this->translateShiftType($this->shift_type)],
+            'in_office' => [$this->in_office => $this->translateInOfficeType($this->in_office)],
+            'shift_type_translatables' => $this->shiftTypeTranslatables,
+            'in_office_translatables' => $this->inOfficeTranslatables,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }
